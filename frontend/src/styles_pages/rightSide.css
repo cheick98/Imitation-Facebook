@@ -1,0 +1,120 @@
+.right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.right-side h1 {
+  height: 40px;
+  width: 78%;
+
+  color: #c3c5c8;
+  border-bottom: 2px solid;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+body .right-side .friend-suggestion-container {
+  width: 78%;
+  overflow-y: auto;
+
+  height: calc(100vh - 115px);
+  position: sticky;
+  top: 115px;
+}
+
+.right-side .friend-suggestion-container .friend-suggestion {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.right-side .friend-suggestion-container .friend-suggestion:hover {
+  background: #e4e6e9;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.right-side
+  .friend-suggestion-container
+  .friend-suggestion
+  .img-text-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+  color: #2e2f2f;
+}
+
+.right-side
+  .friend-suggestion-container
+  .friend-suggestion
+  .img-text-container
+  .img-container {
+  height: 40px;
+  width: 40px;
+}
+
+.right-side
+  .friend-suggestion-container
+  .friend-suggestion
+  .img-text-container
+  .img-container
+  img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 1px solid grey;
+  object-fit: cover;
+}
+
+.right-side
+  .friend-suggestion-container
+  .friend-suggestion
+  .img-text-container
+  span {
+  margin-left: 10px;
+}
+
+.right-side .friend-suggestion-container .friend-suggestion .follow {
+  height: 35px;
+  width: 80px;
+  font-size: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-side .friend-suggestion-container .friend-suggestion .follow i {
+  color: #1b74e4;
+}
+
+.right-side .friend-suggestion-container .friend-suggestion .follow:hover {
+  background-color: #1b74e4;
+  border-radius: 10px;
+}
+
+.right-side .friend-suggestion-container .friend-suggestion .follow:hover i {
+  color: #000;
+}
+
+/*Ceci est une tablette*/
+@media (min-width: 900px) and (max-width: 1099px) {
+  .right-side h1 {
+    font-size: 30px;
+  }
+
+  .right-side
+    .friend-suggestion-container
+    .friend-suggestion
+    .img-text-container {
+    width: 100%;
+  }
+}

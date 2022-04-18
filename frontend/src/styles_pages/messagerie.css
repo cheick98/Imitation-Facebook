@@ -1,0 +1,267 @@
+.messagerie {
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: center; */
+  max-width: 1600px;
+  width: 100%;
+  margin: auto;
+  height: calc(100vh - 85px);
+  border-radius: 10px;
+
+  background: #ffffff;
+  box-shadow: 0 1px 3px 1px rgb(60 64 67 / 15%), 0 1px 2px 0 rgb(60 64 67 / 30%);
+  border-radius: 10px;
+}
+
+.left-side-mes,
+.right-side-mes {
+  flex-basis: 30%;
+  height: 100%;
+  overflow-y: auto;
+  border-radius: 10px;
+  /* background: blue; */
+}
+
+.center-side-mes {
+  flex-basis: 70%;
+  border-radius: 10px;
+}
+
+/* left side message */
+/* left header */
+.left-side-mes .left-header {
+  background: #ffffff;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.left-side-mes .left-header p {
+  padding: 10px;
+  color: #050505;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.left-side-mes .left-header .search {
+  position: relative;
+  padding: 10px;
+}
+
+.left-side-mes .left-header .search input {
+  height: 40px;
+  width: 100%;
+  padding-left: 25px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: #f0f2f5;
+}
+
+.left-side-mes .left-header .search input::placeholder,
+.left-side-mes .left-header .search i {
+  color: #65676b;
+}
+
+.left-side-mes .left-header .search i {
+  position: absolute;
+  top: 22px;
+  left: 15px;
+}
+
+/* left body for friend discution */
+.left-side-mes .body-left {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: calc(100vh - 180px);
+  overflow-y: auto;
+}
+
+.body-left .friend-discution.selected {
+  background: #eaf3ff;
+}
+
+.body-left .friend-discution {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.body-left .friend-discution:hover {
+  background: #f2f2f2;
+}
+
+.body-left .friend-discution img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.body-left .friend-discution .friend-name-message {
+  margin-left: 10px;
+}
+.body-left .friend-discution .friend-name-message .pseudo {
+  color: #45484b;
+}
+
+/* center side message */
+/* center header */
+.center-side-mes .select-friend-to-speak {
+  height: 100%;
+  border-left: 1px solid #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+  color: #767778;
+}
+
+.center-side-mes .center-header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+
+  border: 1px solid #f2f2f2;
+  background: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.center-side-mes .center-header .img-name {
+  display: flex;
+  align-items: center;
+}
+
+.center-side-mes .center-header .img-name img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.center-side-mes .center-header .img-name span {
+  margin-left: 10px;
+}
+
+.center-side-mes .center-header i {
+  cursor: pointer;
+  color: #007df2;
+  padding: 10px;
+}
+
+.center-side-mes .center-header i:hover {
+  border-radius: 50%;
+  background: #f2f2f2;
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
+
+/* center body */
+.center-side-mes .body-center {
+  position: relative;
+  height: calc(100vh - 150px);
+  border-left: 1px solid #f2f2f2;
+}
+
+/* discussion container */
+.center-side-mes .body-center .discussion-container {
+  height: calc(100% - 60px);
+  overflow-y: auto;
+}
+
+.center-side-mes .body-center .discussion-container .no-disc {
+  height: 100%;
+  border-left: 1px solid #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+  color: #767778;
+  text-align: center;
+}
+
+/* discussion */
+.discussion {
+  display: flex;
+  padding: 5px;
+}
+
+.discussion.own {
+  justify-content: flex-end;
+}
+
+.discussion.own .mes-times p {
+  background: #0084ff;
+}
+
+.discussion img {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.discussion .mes-times {
+  margin-left: 5px;
+  max-width: 55%;
+}
+
+.discussion .mes-times span {
+  width: 100%;
+  display: inline-block;
+  text-align: right;
+}
+
+.discussion .mes-times p {
+  background: #e4e6eb;
+  border-radius: 10px;
+  padding: 7px;
+}
+
+/* send message */
+.center-side-mes form {
+  height: 60px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: absolute;
+  bottom: 0;
+  background: #f0f2f5;
+}
+
+.center-side-mes form input {
+  flex-basis: 96%;
+  height: 100%;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  padding-left: 20px;
+  font-size: 17.5px;
+}
+
+.center-side-mes form button {
+  border: none;
+  background: none;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: rgb(0, 125, 242);
+  cursor: pointer;
+}
+
+.center-side-mes form button:hover {
+  background: #f0f2f5;
+}

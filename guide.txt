@@ -1,0 +1,20 @@
+Tout d'abord vous devez telecharger et installer MongoDBCompass
+
+Dans le dossier Backend
+
+*pour le dossier _uploads_
+1-renommé le dossier _uploads_ en _uploads
+2-puis creer 3 dossiers à l'interieur de _uploads appellés : background, post, profil
+3-puis deplacer le fichier image random-user.png à l'interieur du dossier profil que vous allez creer
+4-puis deplacer le fichier image bg.jpg à l'interieur du dossier background que vous allez creer
+
+*pour le dossier config
+1-renommé le fichier .env_sample en .env
+2-Saisissez vos informations correspondantes
+
+
+
+Dans le dossier Frontend
+
+1-renommé le package_sample.json en package.json
+2-et dans ce package.json, à la 5ieme ligne, mettez l'url de votre backend ex:http://localhost:3005

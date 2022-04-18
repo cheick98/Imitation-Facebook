@@ -1,0 +1,49 @@
+.signupLogin {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signupLogin ul {
+  height: 60px;
+  width: 400px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signupLogin ul li {
+  list-style: none;
+  height: 100%;
+  width: 100%;
+
+  padding: 5px;
+}
+
+.signupLogin ul li button {
+  background: none;
+  height: 100%;
+  width: 100%;
+  font-size: 25px;
+  padding: 5px;
+  color: #606266;
+
+  border: 1px solid #191919;
+  border-radius: 5px;
+}
+
+.signupLogin ul li button.active {
+  background: #1a6ed8;
+  color: #fff;
+  border: none;
+
+  transition: all 0.5s ease;
+}

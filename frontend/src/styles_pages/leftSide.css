@@ -1,0 +1,66 @@
+/* Body container left side */
+.left-side .profil {
+  width: 78%;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.left-side .profil:hover {
+  background: #e4e6e9;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.left-side .profil .user-pic {
+  height: 45px;
+  width: 45px;
+}
+
+.left-side .profil .user-pic img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 1px solid grey;
+  object-fit: cover;
+}
+
+.left-side .profil span {
+  margin-left: 10px;
+  color: #434444;
+  font-size: 20px;
+}
+
+.left-side .icons-text {
+  width: 78%;
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.left-side .icons-text .icon-text {
+  padding: 5px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.left-side .icons-text .icon-text:hover {
+  background: #e4e6e9;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.left-side .icons-text .icon-text i {
+  font-size: 25px;
+  color: #1b74e4;
+  padding-left: 5px;
+}
+
+.left-side .icons-text .icon-text span {
+  margin-left: 20px;
+  color: #434444;
+  font-size: 20px;
+}

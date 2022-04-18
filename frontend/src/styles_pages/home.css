@@ -1,0 +1,667 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* pour le scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+/* pour lui donner une couleur */
+/* ::-webkit-scrollbar-thumb { */
+/* background: green; */
+/* } */
+
+/* pour donner une couleur dans l'espace dans lequel il defile */
+/* ::-webkit-scrollbar-track { */
+/* background: #000; */
+/* } */
+
+body {
+  background: #f0f2f5;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.body-home {
+  width: 100%;
+
+  display: flex;
+}
+
+.body-home .left-side,
+.body-home .right-side {
+  height: calc(100vh - 70px);
+  flex-basis: 30%;
+  overflow-y: auto;
+  padding: 0 10px;
+
+  position: sticky;
+  top: 70px;
+}
+
+.body-home .center-side {
+  position: relative;
+  flex-basis: 40%;
+}
+
+/* For do a post */
+.post {
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px 1px rgb(60 64 67 / 15%), 0 1px 2px 0 rgb(60 64 67 / 30%);
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.post .poster {
+  display: flex;
+}
+
+.post .poster .image {
+  position: relative;
+  height: 70px;
+  width: 70px;
+}
+
+.post .poster .image img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid grey;
+  border-radius: 50%;
+}
+
+.post .poster textarea {
+  margin-left: 10px;
+  height: 85px;
+  width: 100%;
+  font-size: 20px;
+  border: 1px solid grey;
+  outline: none;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.post hr {
+  margin: 10px 0;
+  color: #e4e6eb;
+}
+
+/* for preview image */
+.post .preview {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.post .preview img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.post .preview i {
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  padding-top: 2px;
+  border-radius: 50%;
+  color: #606266;
+  font-size: 25px;
+  cursor: pointer;
+
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: rgb(255, 122, 122);
+}
+
+.post .preview i:hover {
+  transform: scale(1.1);
+}
+
+/* for the button post and abort post */
+.post .do-post {
+  height: 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post .do-post .image-post i {
+  color: green;
+}
+
+.post .do-post .image-post i:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.post .do-post .text {
+  height: 100%;
+  width: 50%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.post .do-post .text button {
+  flex-basis: 50%;
+  border: 1px solid grey;
+  cursor: pointer;
+  background: none;
+  border-radius: 5px;
+}
+
+.post .do-post .text button:hover {
+  background: #1770e6;
+  transition: all 0.5s ease;
+}
+
+.post .do-post .text button:first-child {
+  margin-right: 5px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* see friend online */
+.body-home .center-side .friend-list-container {
+  overflow-x: scroll;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 1px 3px 1px rgb(60 64 67 / 15%), 0 1px 2px 0 rgb(60 64 67 / 30%);
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.body-home .center-side .friend-list-container .friend-online {
+  display: flex;
+  align-items: center;
+
+  height: 60px;
+  width: 60px;
+  margin: 3px 0;
+}
+
+.body-home .center-side .friend-list-container .friend-online .img-container {
+  position: relative;
+  margin: 0 3px;
+}
+
+.body-home
+  .center-side
+  .friend-list-container
+  .friend-online
+  .img-container::after {
+  content: "";
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: green;
+  position: absolute;
+  right: 5px;
+  bottom: 6px;
+}
+
+.body-home
+  .center-side
+  .friend-list-container
+  .friend-online
+  .img-container
+  img {
+  width: 55px;
+  height: 55px;
+
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid grey;
+}
+
+/* the posts */
+.card {
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+  box-shadow: 0 1px 3px 1px rgb(60 64 67 / 15%), 0 1px 2px 0 rgb(60 64 67 / 30%);
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* card header */
+.card .card-header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+}
+
+.card .card-header .img-name {
+  display: flex;
+  align-items: center;
+}
+
+.card .card-header .img-name .img {
+  position: relative;
+  height: 45px;
+  width: 45px;
+}
+
+.card .card-header .img-name .img img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid grey;
+}
+
+.card .card-header .img-name p {
+  margin-left: 5px;
+  line-height: 20px;
+  color: #050505;
+}
+
+.card .card-header .img-name p span {
+  color: #7e6783;
+}
+
+/* menu option */
+.card .card-header .option-menu {
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card .card-header .option-menu i {
+  color: #606266;
+  margin: 1px;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.card .card-header .option-menu i:hover {
+  background: #f2f2f2;
+  transform: scale(1.1);
+}
+
+/* menu option valid edit post */
+.card .card-header .option-menu .valid {
+  color: green;
+}
+.card .card-header .option-menu .valid:hover {
+  background: lightgreen;
+}
+
+/* menu option abort edit post */
+.card .card-header .option-menu .abort {
+  color: #d81c3c;
+}
+.card .card-header .option-menu .abort:hover {
+  background: lightsalmon;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+/* card body */
+.card .card-body p {
+  font-family: "Times New Roman", Times, serif;
+  text-align: justify;
+  padding: 0 10px;
+}
+
+.card .card-body textarea {
+  border: 1px solid #c3c5c8;
+  border-radius: 10px;
+  padding: 0 10px;
+  text-align: justify;
+  width: 97%;
+  height: 65px;
+  outline-color: #1b74e4;
+  margin: 0 10px;
+}
+
+.card .card-body .img-container {
+  max-width: 100%;
+  height: auto;
+  margin: 5px 0;
+}
+
+.card .card-body .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .card-body hr {
+  margin: 10px 10px 5px 10px;
+}
+
+/* card footer */
+.card .card-footer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+}
+
+/* for like comment and share a post */
+.card .card-footer .like-comment-share {
+  height: 40px;
+  color: #636569;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card .card-footer .like-comment-share span {
+  margin-left: 5px;
+}
+
+.card .card-footer .like-comment-share .like,
+.card .card-footer .like-comment-share .comment,
+.card .card-footer .like-comment-share .share {
+  flex-basis: 33%;
+  text-align: center;
+  height: 100%;
+  font-size: 20px;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1px;
+  cursor: pointer;
+}
+
+.card .card-footer .like-comment-share .comment {
+  flex-basis: 34%;
+}
+
+.card .card-footer .like-comment-share .like:hover,
+.card .card-footer .like-comment-share .comment:hover,
+.card .card-footer .like-comment-share .share:hover {
+  background: #f2f2f2;
+}
+
+.card .card-footer hr {
+  margin: 5px 0 10px 0;
+}
+
+/* for comment and see comment */
+/* do a comment */
+.card .card-footer .commenter {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .card-footer .commenter .do-comment {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.card .card-footer .commenter .do-comment .img-container {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.card .card-footer .commenter .do-comment .img-container img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid grey;
+}
+
+.card .card-footer .commenter .do-comment form {
+  height: 44px;
+  width: 93.7%;
+}
+
+.card .card-footer .commenter .do-comment form input {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background: #f0f2f5;
+  padding-left: 15px;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.card .card-footer .commenter .do-comment span {
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+/* see comment */
+.card .card-footer .commenter .see-comment {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.card .card-footer .commenter .see-comment .user-comment {
+  display: flex;
+}
+
+.card .card-footer .commenter .see-comment .user-comment .image .img-container {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.card
+  .card-footer
+  .commenter
+  .see-comment
+  .user-comment
+  .image
+  .img-container
+  img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid grey;
+}
+
+.card .card-footer .commenter .see-comment .user-comment .user-name-comment {
+  max-width: 100%;
+
+  background: #f0f2f5;
+  border-radius: 15px;
+  padding: 7px;
+  margin-left: 5px;
+  text-align: justify;
+}
+
+.card
+  .card-footer
+  .commenter
+  .see-comment
+  .user-comment
+  .user-name-comment
+  .user-name {
+  color: #050505;
+  font-weight: bold;
+}
+
+.card
+  .card-footer
+  .commenter
+  .see-comment
+  .user-comment
+  .user-name-comment
+  .user-name:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.card
+  .card-footer
+  .commenter
+  .see-comment
+  .user-comment
+  .user-name-comment
+  textarea {
+  border: 1px solid #c3c5c8;
+  border-radius: 10px;
+  padding: 2px 10px;
+  text-align: justify;
+  width: 495px;
+  min-height: 60px;
+  outline-color: #1b74e4;
+}
+
+/* edit and delete valid abort edit comment */
+.card .card-footer .commenter .see-comment .user-comment .icon-delete-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 5px;
+}
+
+/* valid edit comment */
+.card
+  .card-footer
+  .commenter
+  .see-comment
+  .user-comment
+  .icon-delete-edit
+  .valid {
+  color: green;
+}
+
+.card
+  .card-footer
+  .commenter
+  .see-comment
+  .user-comment
+  .icon-delete-edit
+  .valid:hover {
+  background: lightgreen;
+}
+
+/* abort edit comment */
+.card
+  .card-footer
+  .commenter
+  .see-comment
+  .user-comment
+  .icon-delete-edit
+  .abort {
+  color: #d81c3c;
+}
+
+.card
+  .card-footer
+  .commenter
+  .see-comment
+  .user-comment
+  .icon-delete-edit
+  .abort:hover {
+  background: lightsalmon;
+}
+
+/* default edit and delete comment */
+.card .card-footer .commenter .see-comment .user-comment .icon-delete-edit i {
+  color: #606266;
+  margin: 1px;
+  padding: 3px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.card
+  .card-footer
+  .commenter
+  .see-comment
+  .user-comment
+  .icon-delete-edit
+  i:hover {
+  background: #f2f2f2;
+  transform: scale(1.1);
+}
+
+/* like comment */
+
+.card .card-footer .commenter .see-comment .like-comment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: absolute;
+  bottom: -20px;
+  left: 45px;
+
+  width: 300px;
+}
+
+.card .card-footer .commenter .see-comment .like-comment p i:hover {
+  /* color: #1b74e4; */
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* post no comment */
+.card .card-footer .commenter .no-comment {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0e0e0e;
+}
+
+/*Ceci est un telephone*/
+@media (max-width: 900px) {
+  .body-home .left-side,
+  .body-home .right-side {
+    display: none;
+  }
+
+  .body-home .center-side {
+    flex-basis: 100%;
+    padding: 0 10px;
+    margin: auto;
+  }
+}
+
+/*Ceci est une tablette*/
+@media (min-width: 900px) and (max-width: 1099px) {
+  .body-home .left-side {
+    display: none;
+  }
+
+  .body-home .center-side {
+    flex-basis: 65%;
+    padding: 0 10px;
+  }
+
+  .body-home .right-side {
+    flex-basis: 35%;
+  }
+}

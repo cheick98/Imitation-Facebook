@@ -1,0 +1,64 @@
+.singup {
+  background: #ffffff;
+  box-shadow: 0 1px 3px 1px rgb(60 64 67 / 15%), 0 1px 2px 0 rgb(60 64 67 / 30%);
+  border-radius: 10px;
+  width: 750px;
+
+  margin-top: 10px;
+}
+
+.singup h1 {
+  text-align: center;
+  color: #606266;
+}
+
+.singup form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.singup form div {
+  width: 90%;
+  padding: 5px 0;
+}
+
+.singup form input {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  padding-left: 20px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background: #f2f2f2;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.singup form .nom-prenom,
+.singup form .password-passwordConfirm {
+  display: flex;
+  align-items: center;
+}
+
+.singup form .nom-prenom input,
+.singup form .password-passwordConfirm input {
+  margin: 5px;
+}
+
+.singup form .inscrire {
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.singup form .inscrire input {
+  padding: 0;
+  width: 100%;
+  color: #60627d;
+}
+
+.singup form .inscrire input:hover {
+  background: #1a6ed8;
+  color: #fff;
+}

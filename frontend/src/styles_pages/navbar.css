@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f0f2f5;
+  min-width: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px 1px rgb(60 64 67 / 15%), 0 1px 2px 0 rgb(60 64 67 / 30%);
+  padding: 0 10px;
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+/* for fixed their width */
+nav .left-side-nav,
+nav .right-side-nav {
+  height: 50px;
+  flex-basis: 30%;
+}
+
+/* Navbar left side */
+nav .left-side-nav {
+  display: flex;
+  align-items: center;
+
+  font-size: 40px;
+}
+
+nav .left-side-nav i:first-child {
+  color: #0a81ed;
+  cursor: pointer;
+}
+
+nav .left-side-nav .search-icon {
+  position: relative;
+  margin-left: 15px;
+  height: 40px;
+  width: 65%;
+
+  display: flex;
+  align-items: center;
+}
+
+nav .left-side-nav .search-icon i {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 18px;
+  color: #65676b;
+}
+
+nav .left-side-nav .search-icon input {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background: #f0f2f5;
+  padding-left: 35px;
+  font-size: 18px;
+}
+
+nav .left-side-nav .search-icon input::placeholder {
+  color: #65676b;
+  font-size: 16px;
+}
+
+/* Navbar center side */
+nav .center-side-nav {
+  height: 50px;
+  flex-basis: 40%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav .center-side-nav li {
+  list-style: none;
+  flex-grow: 1;
+  height: 100%;
+  font-size: 25px;
+
+  display: flex;
+  align-items: center;
+}
+
+nav .center-side-nav li .i-container {
+  height: 100%;
+  flex-grow: 1;
+  position: relative;
+}
+
+nav .center-side-nav li .i-container i {
+  height: 100%;
+  width: 100%;
+  flex-grow: 1;
+  font-size: 25px;
+  cursor: pointer;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 45px;
+  color: #606266;
+}
+
+nav .center-side-nav li .i-container i.active {
+  color: #1b74e4;
+}
+
+nav .center-side-nav li .i-container i.active::after {
+  height: 6px;
+  width: 100%;
+  border-radius: 10px;
+  background: #1b74e4;
+
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+nav .center-side-nav .i-container i:hover {
+  background: #f2f2f2;
+}
+
+/* Navbar right side */
+nav .right-side-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav .right-side-nav .profil {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+nav .right-side-nav .profil:hover {
+  background: #f2f2f2;
+  border-radius: 20px;
+  transform: scale(1.1, 1.1);
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+nav .right-side-nav .profil .user-pic {
+  position: relative;
+  height: 45px;
+  width: 45px;
+}
+
+nav .right-side-nav .profil .user-pic img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 1px solid grey;
+  object-fit: cover;
+}
+
+nav .right-side-nav .profil span {
+  margin-left: 5px;
+}
+
+nav .right-side-nav .options {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+nav .right-side-nav .options button {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background: #d8dadf;
+  cursor: pointer;
+}
+
+nav .right-side-nav .options button:focus i {
+  color: #2277e7;
+}
+
+nav .right-side-nav .options button i {
+  font-size: 18px;
+  color: #050505;
+}
+
+/*Ceci est un telephone*/
+@media (max-width: 900px) {
+  nav {
+    max-width: 100%;
+  }
+
+  nav .left-side-nav .search-icon {
+    width: 10px;
+    margin-left: 2px;
+  }
+}
+
+/*Ceci est une tablette*/
+@media (min-width: 900px) and (max-width: 1099px) {
+  nav {
+    max-width: 100%;
+  }
+}

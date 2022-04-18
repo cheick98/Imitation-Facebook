@@ -1,0 +1,464 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* pour le scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+/* pour lui donner une couleur */
+/* ::-webkit-scrollbar-thumb { */
+/* background: green; */
+/* } */
+
+/* pour donner une couleur dans l'espace dans lequel il defile */
+/* ::-webkit-scrollbar-track { */
+/* background: #000; */
+/* } */
+
+body {
+  background: #f0f2f5;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.body-profil {
+  width: 100%;
+
+  display: flex;
+}
+
+.body-profil .left-side,
+.body-profil .right-side {
+  height: calc(100vh - 0);
+  flex-basis: 30%;
+  overflow-y: auto;
+  padding: 0 10px;
+
+  position: sticky;
+  top: 70px;
+}
+
+.body-profil .center-side {
+  position: relative;
+  flex-basis: 40%;
+}
+
+/* for background image and edit user picture */
+.user-pic-bg-img {
+  background: #0a81ed;
+  position: relative;
+  height: 335px;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.user-pic-bg-img .bg-img {
+  height: 280px;
+}
+
+.user-pic-bg-img .bg-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.user-pic-bg-img .bg-img .bg-label,
+.valid-abort-bg-picture {
+  position: absolute;
+  bottom: 50px;
+  right: 2px;
+  cursor: pointer;
+
+  background: #ffffff;
+  color: #050505;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.user-pic-bg-img .bg-img .bg-label:hover {
+  background: #f2f2f2;
+}
+
+/* valid change or abort user background picture */
+.valid-abort-bg-picture {
+  width: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  text-align: center;
+}
+
+.valid-abort-bg-picture .valid {
+  padding: 5px;
+  margin-right: 1px;
+  color: #0e8000;
+  width: 50%;
+  border-radius: 50%;
+}
+
+.valid-abort-bg-picture .valid:hover {
+  background: lightgreen;
+}
+
+.valid-abort-bg-picture .abort {
+  padding: 5px;
+  color: #d81c3c;
+  width: 50%;
+  border-radius: 50%;
+}
+
+.valid-abort-bg-picture .abort:hover {
+  background: lightsalmon;
+}
+
+/* user picture */
+.user-pic-bg-img .img-profil-container {
+  width: 200px;
+  height: 200px;
+
+  cursor: pointer;
+
+  position: absolute;
+  bottom: 25px;
+  left: 40%;
+}
+
+.user-pic-bg-img .img-profil-container img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-pic-bg-img .icon-user-pict {
+  position: absolute;
+  bottom: 40px;
+  left: 59%;
+}
+
+.user-pic-bg-img .icon-user-pict label {
+  background: #d8dadf;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* user name */
+.user-pic-bg-img p {
+  color: #050505;
+  font-size: 25px;
+  position: absolute;
+  bottom: 0;
+  left: 37%;
+}
+
+/* menu */
+.center-side .menu-profil {
+  background: #ffffff;
+  box-shadow: 0 1px 3px 1px rgb(60 64 67 / 15%), 0 1px 2px 0 rgb(60 64 67 / 30%);
+  border-radius: 10px;
+
+  height: calc(100vh - 420px);
+}
+
+.menu-profil .menu-title {
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.menu-profil .menu-title span {
+  position: relative;
+  flex: 33.3%;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 25px;
+  border-radius: 10px;
+  margin: 5px;
+  cursor: pointer;
+  color: #606266;
+}
+
+.menu-profil .menu-title span.active::before {
+  position: absolute;
+  bottom: 0;
+
+  content: "";
+  height: 7px;
+  width: 100%;
+  border-radius: 10px;
+  background: #0a81ed;
+}
+
+.menu-profil .menu-title span:hover {
+  background: #f2f2f2;
+}
+
+/* menu profil context */
+.menu-profil .menu-content {
+  overflow-y: auto;
+
+  height: calc(100vh - 480px);
+}
+
+/* menu profil friendlist  */
+.profil-list-friend {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.friends {
+  background: #ffffff;
+  box-shadow: 0 1px 3px 1px rgb(60 64 67 / 15%), 0 1px 2px 0 rgb(60 64 67 / 30%);
+  border-radius: 10px;
+
+  flex-basis: 48.2%;
+  margin: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 15px 15px 5px;
+}
+
+.friends .img-text {
+  text-decoration: none;
+  color: #050505;
+  font-size: 19px;
+
+  display: flex;
+  align-items: center;
+}
+
+.friends .img-text span{
+  margin-left: 10px;
+}
+
+.friends .img-text .friend-img-container {
+  height: 40px;
+  width: 40px;
+}
+
+.friends .img-text .friend-img-container img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.friends i {
+  color: #606266;
+
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.friends i:hover {
+  background: #f2f2f2;
+  transform: scale(1.1);
+}
+
+/* menu profili about me */
+.about {
+  padding: 0 10px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px 1px rgb(60 64 67 / 15%), 0 1px 2px 0 rgb(60 64 67 / 30%);
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+}
+
+.about .label {
+  color: #776266;
+  padding-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.about .information {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about .information div,
+.about .bioInformation {
+  width: 100%;
+  height: 55px;
+  margin: 5px;
+  line-height: 52px;
+  font-size: 22px;
+  border: 1px solid #c3c5c8;
+  border-radius: 10px;
+  color: #050505;
+}
+
+.about .information div span {
+  height: 100%;
+  width: 100%;
+  margin-left: 15px;
+}
+
+.about .information .edit {
+  width: 150px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about .information .edit:hover {
+  background: #1b74e4;
+}
+
+.about .information .edit i {
+  margin-right: 15px;
+}
+
+.about .bioInformation {
+  flex-basis: 45%;
+  height: 485px;
+  line-height: normal;
+  padding: 8px;
+  text-align: justify;
+}
+
+/* edit information */
+.about .information-edit {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about .information-edit div,
+.about .bioEdit {
+  width: 100%;
+  height: 55px;
+  margin: 7px;
+
+  font-size: 22px;
+  border: 1px solid #c3c5c8;
+  border-radius: 10px;
+  color: #050505;
+}
+
+.about .information-edit div input {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: none;
+  padding: 0 15px 0 15px;
+  font-size: 17px;
+}
+
+.about .information-edit .valid-abort {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 100%;
+}
+
+.about .information-edit .valid-abort span {
+  flex-basis: 48%;
+  height: 100%;
+  text-align: center;
+  border: 1px solid grey;
+  border-radius: 10px;
+  color: #050505;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0;
+}
+
+.about .information-edit .valid-abort span:hover {
+  background: #1b74e4;
+}
+
+.about .bioEdit {
+  flex-basis: 45%;
+  height: 560px;
+  line-height: normal;
+}
+
+.about .bioEdit textarea {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: justify;
+  font-size: 15px;
+}
+
+/*Ceci est un telephone*/
+@media (max-width: 900px) {
+  .body-profil .left-side,
+  .body-profil .right-side {
+    display: none;
+  }
+
+  .body-profil .center-side {
+    flex-basis: 100%;
+    padding: 0 10px;
+    margin: auto;
+  }
+
+  .user-pic-bg-img .bg-img .bg-label span {
+    display: none;
+  }
+
+  .user-pic-bg-img .icon-user-pict {
+    left: 56%;
+  }
+}
+
+/*Ceci est une tablette*/
+@media (min-width: 900px) and (max-width: 1099px) {
+  .body-profil .left-side {
+    display: none;
+  }
+
+  .body-profil .center-side {
+    flex-basis: 65%;
+    padding: 0 10px;
+  }
+
+  .body-profil .right-side {
+    flex-basis: 35%;
+  }
+
+  .user-pic-bg-img .bg-img .bg-label span {
+    display: none;
+  }
+
+  .user-pic-bg-img .icon-user-pict {
+    left: 63%;
+  }
+}

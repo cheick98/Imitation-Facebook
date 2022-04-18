@@ -1,0 +1,18 @@
+# node modules for my-project
+/node_modules
+package-lock.json
+
+# node modules for frontend
+/frontend/node_modules
+/frontend/package.json
+/frontend/package-lock.json
+
+# node modules for backend
+/backend/node_modules
+/backend/_uploads
+/backend/config/.env
+/backend/package-lock.json
+
+# node modules for socket
+/socket/node_modules
+/socket/package-lock.json
